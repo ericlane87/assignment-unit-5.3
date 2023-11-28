@@ -4,6 +4,65 @@ console.log('***** Music Collection *****')
 
 
 
+let myCollection = [];
+
+function addToCollection(collection, title, artist, yearPublished) {
+
+  let Album = {
+    title: title,
+    artist: artist,
+    yearPublished: yearPublished
+  };
+
+  
+  collection.push(Album);
+
+
+  return Album;
+}
+
+
+let album1 = addToCollection(myCollection, 'Album 1', 'Artist XZY', 1990);
+let album2 = addToCollection(myCollection, 'Album 2', 'Artist ABC', 2005);
+let album3 = addToCollection(myCollection, 'Album 3', 'Artist TKY', 2011);
+let album4 = addToCollection(myCollection, 'Album 4', 'Artist GHP', 2023);
+let album5 = addToCollection(myCollection, 'Album 5', 'Artist AAA', 2021);
+let album6 = addToCollection(myCollection, 'Album 6', 'Artist QRP', 1999);
+
+console.log(album1);
+console.log(album2);
+console.log(album3);
+console.log(album4);
+console.log(album5);
+console.log(album6);
+
+console.log(myCollection);
+
+function showCollection(collection) {
+  for (let album of collection) {
+    console.log(`${album.title} by ${album.artist}, published in ${album.yearPublished}`);
+  }
+}
+
+showCollection(album1);
+
+function findByArtist(collection, artist) {
+  let Matchingresults = [];
+
+  for (let album of collection) {
+    if (album.artist === artist) {
+      Matchingresults.push(album);
+    }
+  }
+
+  return Matchingresults;
+}
+
+console.log(findByArtist(myCollection, 'Artist XYZ'));
+console.log(findByArtist(myCollection, 'Artist PPP')); 
+
+
+
 
 
 
